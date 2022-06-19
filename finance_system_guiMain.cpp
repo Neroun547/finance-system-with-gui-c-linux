@@ -94,7 +94,7 @@ finance_system_guiFrame::finance_system_guiFrame(wxWindow* parent,wxWindowID id)
         }
         new wxStaticText(this, ID_STATICTEXT_ALL_SUM, "All spending: " + to_string(allSum), wxPoint(660, 230), wxDefaultSize, 0, _T("ID_STATICTEXT_ALL_SUM"));
         Connect(ID_BUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&finance_system_guiFrame::OnButton1Click);
-        Connect(ID_LISTBOX1,wxEVT_COMMAND_LISTBOX_SELECTED,(wxObjectEventFunction)&finance_system_guiFrame::OnListBox1Select1);
+        Connect(ID_LISTBOX1,wxEVT_COMMAND_LISTBOX_DOUBLECLICKED,(wxObjectEventFunction)&finance_system_guiFrame::OnListBox1Select1);
         Connect(idMenuQuit,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&finance_system_guiFrame::OnQuit);
         Connect(idMenuAbout,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&finance_system_guiFrame::OnAbout);
     } else {
@@ -106,7 +106,7 @@ finance_system_guiFrame::finance_system_guiFrame(wxWindow* parent,wxWindowID id)
         ListBox1 = new wxListBox(this, ID_LISTBOX1, wxPoint(660,260), wxSize(600,300), 0, 0, 0, wxDefaultValidator, _T("ID_LISTBOX1"));
 
         Connect(ID_BUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&finance_system_guiFrame::OnButton1Click);
-        Connect(ID_LISTBOX1, wxEVT_COMMAND_LISTBOX_SELECTED,(wxObjectEventFunction)&finance_system_guiFrame::OnListBox1Select1);
+        Connect(ID_LISTBOX1,  wxEVT_COMMAND_LISTBOX_DOUBLECLICKED,(wxObjectEventFunction)&finance_system_guiFrame::OnListBox1Select1);
         Connect(idMenuQuit,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&finance_system_guiFrame::OnQuit);
         Connect(idMenuAbout,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&finance_system_guiFrame::OnAbout);
     }

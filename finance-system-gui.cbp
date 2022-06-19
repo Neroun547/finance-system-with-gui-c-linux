@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="finance-system-gui" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Release">
+				<Option output="bin/Release/finance-system-gui" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="/home/gosha/include" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="/home/gosha/wxsqlite3/include" />
+				</ResourceCompiler>
+				<Linker>
+					<Add option="-s" />
+					<Add directory="/home/gosha/wxsqlite3/include" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="`wx-config --cflags`" />
+			<Add option='[[if (GetCompilerFactory().GetCompilerVersionString(_T(&quot;gcc&quot;)) &gt;= _T(&quot;4.8.0&quot;)) print(_T(&quot;-Wno-unused-local-typedefs&quot;));]]' />
+			<Add option="-Wall" />
+		</Compiler>
+		<Linker>
+			<Add option="`wx-config --libs`" />
+		</Linker>
+		<Unit filename="finance_system_guiApp.cpp" />
+		<Unit filename="finance_system_guiApp.h" />
+		<Unit filename="finance_system_guiMain.cpp" />
+		<Unit filename="finance_system_guiMain.h" />
+		<Unit filename="include/finance_system_gui_category.h" />
+		<Unit filename="src/finance_system_gui_category.cpp" />
+		<Unit filename="wxsmith/finance_system_guiframe.wxs" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<lib_finder disable_auto="1" />
+			<wxsmith version="1">
+				<gui name="wxWidgets" src="finance_system_guiApp.cpp" main="finance_system_guiFrame" init_handlers="necessary" language="CPP" />
+				<resources>
+					<wxFrame wxs="wxsmith/finance_system_guiframe.wxs" src="finance_system_guiMain.cpp" hdr="finance_system_guiMain.h" fwddecl="0" i18n="1" name="finance_system_guiFrame" language="CPP" />
+				</resources>
+			</wxsmith>
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
